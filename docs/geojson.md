@@ -34,6 +34,7 @@ const myPlace = {
       type: Feature,
         properties: {
           fillColor: rgba(0, 0, 255, 0.4),
+          highlightedFillColor: 'rgba(94, 172, 208, 1)',
           strokeColor: rgba(0, 0, 255, 1),
           strokeWidth: 1
         },
