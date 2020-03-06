@@ -160,20 +160,22 @@ public class AirMapManager extends ViewGroupManager<AirMapView> {
     view.setShowsUserLocation(showUserLocation);
   }
 
-  @ReactProp(name = "userLocationPriority")
-  public void setUserLocationPriority(AirMapView view, @Nullable String accuracy) {
-    view.setUserLocationPriority(MY_LOCATION_PRIORITY.get(accuracy));
-  }
+  // Temporarily comment out as it's causing compile error.
 
-  @ReactProp(name = "userLocationUpdateInterval", defaultInt = 5000)
-  public void setUserLocationUpdateInterval(AirMapView view, int updateInterval) {
-    view.setUserLocationUpdateInterval(updateInterval);
-  }
-
-  @ReactProp(name = "userLocationFastestInterval", defaultInt = 5000)
-  public void setUserLocationFastestInterval(AirMapView view, int fastestInterval) {
-    view.setUserLocationFastestInterval(fastestInterval);
-  }
+//  @ReactProp(name = "userLocationPriority")
+//  public void setUserLocationPriority(AirMapView view, @Nullable String accuracy) {
+//    view.setUserLocationPriority(MY_LOCATION_PRIORITY.get(accuracy));
+//  }
+//
+//  @ReactProp(name = "userLocationUpdateInterval", defaultInt = 5000)
+//  public void setUserLocationUpdateInterval(AirMapView view, int updateInterval) {
+//    view.setUserLocationUpdateInterval(updateInterval);
+//  }
+//
+//  @ReactProp(name = "userLocationFastestInterval", defaultInt = 5000)
+//  public void setUserLocationFastestInterval(AirMapView view, int fastestInterval) {
+//    view.setUserLocationFastestInterval(fastestInterval);
+//  }
 
   @ReactProp(name = "showsMyLocationButton", defaultBoolean = true)
   public void setShowsMyLocationButton(AirMapView view, boolean showMyLocationButton) {
