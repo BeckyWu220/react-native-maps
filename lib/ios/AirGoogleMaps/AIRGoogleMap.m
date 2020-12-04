@@ -132,8 +132,14 @@ id regionAsJSON(MKCoordinateRegion region) {
     [self.markers addObject:marker];
   } else if ([subview isKindOfClass:[AIRGoogleMapPolygon class]]) {
     AIRGoogleMapPolygon *polygon = (AIRGoogleMapPolygon*)subview;
-    polygon.polygon.map = self;
-    [self.polygons addObject:polygon];
+    [polygon setFillColor: polygon.polygon.fillColor];
+    
+    double delayInSeconds = 1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        polygon.polygon.map = self;
+        [self.polygons addObject:polygon];
+    });
   } else if ([subview isKindOfClass:[AIRGoogleMapPolyline class]]) {
     AIRGoogleMapPolyline *polyline = (AIRGoogleMapPolyline*)subview;
     polyline.polyline.map = self;
